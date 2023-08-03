@@ -1,8 +1,24 @@
+import Auth from 'auth/Auth';
+import SignInPage from 'pages/SignInPage';
+import SignUpPage from 'pages/SignUpPage';
+import TodoPage from 'pages/TodoPage';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
 function App() {
     return (
-        <div className='App'>
-            <h1 className='text-sm font-bold'>Todo App</h1>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<Auth option={true} />}>
+                    <Route path='/' element={<Navigate to='/todo' replace />} />
+                    <Route path='/todo' element={<TodoPage />} />
+                </Route>
+
+                <Route element={<Auth option={false} />}>
+                    <Route path='/signin' element={<SignInPage />} />
+                    <Route path='/signup' element={<SignUpPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
