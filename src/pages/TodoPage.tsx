@@ -8,9 +8,6 @@ type Props = {};
 const TodoPage = (props: Props) => {
     return (
         <Layout>
-            <div>
-                <h1 className='text-lg font-bold'>My Todo</h1>
-            </div>
             <TodoContextProvider>
                 <TodoAddForm />
                 <TodoList />

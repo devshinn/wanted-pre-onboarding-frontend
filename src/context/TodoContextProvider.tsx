@@ -43,11 +43,13 @@ export default function TodoContextProvider({
     const deleteTodo = useCallback(
         async (todoId: number) => {
             if (!token) return;
+            // eslint-disable-next-line no-restricted-globals
+            if (confirm('삭제 하시겠습니까?')) {
+                const data = await fetchDeleteTodo(token, todoId);
+                getTodos();
 
-            const data = await fetchDeleteTodo(token, todoId);
-            getTodos();
-
-            return data;
+                return data;
+            }
         },
         [token, getTodos]
     );

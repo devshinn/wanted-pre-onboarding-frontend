@@ -30,7 +30,7 @@ const UpdateForm = ({ todo, setTodo, setEditOn }: Props) => {
             </button>
             <button
                 className=' whitespace-nowrap px-1 text-red-500'
-                onClick={onClickBtn}
+                onClick={() => setEditOn(false)}
                 data-testid='cancel-button'
             >
                 취소
