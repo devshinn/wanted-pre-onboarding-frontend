@@ -1,4 +1,5 @@
 import { fetchSignup } from 'apis';
+import { errorHandler } from 'apis/errorHandler';
 import useToken from 'hooks/useToken';
 import { cn, validate } from 'lib/utils';
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
@@ -33,7 +34,7 @@ const SignUpPage = () => {
                         navigate('/signin');
                     }
                 })
-                .catch((error) => alert(error.response.data.message));
+                .catch(errorHandler);
         },
         [loginData, navigate]
     );

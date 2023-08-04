@@ -1,4 +1,5 @@
 import { fetchSignin } from 'apis';
+import { errorHandler } from 'apis/errorHandler';
 import useToken from 'hooks/useToken';
 import { cn, validate } from 'lib/utils';
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
@@ -24,10 +25,13 @@ const SignInPage = () => {
     const onSubmit = useCallback(
         (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
-            fetchSignin(loginData).then((res) => {
-                setToken(res.data['access_token']);
-                navigate('/todo', { replace: true });
-            });
+            fetchSignin(loginData)
+                .then((res) => {
+                    console.log('first');
+                    setToken(res.access_token);
+                    navigate('/todo', { replace: true });
+                })
+                .catch(errorHandler);
         },
         [loginData, setToken]
     );
@@ -37,7 +41,6 @@ const SignInPage = () => {
     return (
         <div className='bg-grey-lighter text-base text-grey-darkest font-normal relative'>
             <div className='h-2 bg-primary mb-20'></div>
-            {token}
             <div className='p-6'>
                 <div className='mx-auto max-w-sm container'>
                     <div className='bg-white rounded shadow  '>

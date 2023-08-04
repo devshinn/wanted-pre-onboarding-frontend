@@ -25,7 +25,7 @@ const Auth = ({ option }: Props) => {
         } else if (option === false && token) {
             return navigate('/todo', { replace: true });
         }
-    }, []);
+    }, [token]);
 
     return <Outlet />;
 };
