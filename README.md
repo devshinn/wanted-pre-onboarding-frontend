@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+로컬 서버 실행
+서버 프로젝트를 클론 받아 아래 명령어를 이용해 서버를 실행 합니다.
 
-## Available Scripts
+> ```bash
+> git clone https://github.com/devshinn/wanted-pre-onboarding-frontend.git
+> npm install
+> npm start
+> ```
 
-In the project directory, you can run:
+> # 배포링크
+>
+> [여기](https://wanted-pre-onboarding-frontend-three-delta.vercel.app/)서 확인 및 테스트 할수 있습니다.
 
-### `npm start`
+## 사용 기술
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+|               | Framework library             |
+| :-----------: | ----------------------------- |
+| 프로젝트 설정 | Create React App + TypeScript |
+|   스타일링    | tailwindcss                   |
+|   서버 통신   | axios                         |
+|  페이지 처리  | react-router-dom              |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Routing
 
-### `npm test`
+페이지 진입전 권한 체크, Nested Routes를 이용해 리다이렉션을 처리했습니다.로그인/회원가입 페이지
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Auth
 
-### `npm run build`
+auth의 경우 현재는 토큰만 관리하면 되기때문에 따로 전역상태관리를 설정을 하지않고 CustomHook으로 관리되고, 필요한 곳에서 사용하고 있습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ui/ux/components 경우 디자인 시스템이 잘 갖춰져 있다면 컴포넌를 분리해서 재사용 할수 있게 설계하겠지만, 현재는 Siginup, Signin으로만 분리되어 있습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Todo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+todo의 경우는 여러개의 컴포넌트로 분리되었기 때문에 todo데이터를 전역에서 관리할 필요성이 있어 context api를 사용 하여 관리되고 있습니다.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+redux나 recoil react-query로 할수도 있지만 프로젝트 자체가 복잡하지 않기에 간단하게 사용 할수 있는 context api를 선택하였습니다.
