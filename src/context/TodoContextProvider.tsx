@@ -6,7 +6,6 @@ import {
     fetchGetTodos,
     fetchUpdateTodo,
 } from 'apis';
-import axios from 'axios';
 import useToken from 'hooks/useToken';
 import { Todo } from 'types';
 import { TodoContext } from './TodoContext';
@@ -20,23 +19,20 @@ export default function TodoContextProvider({
     const { token } = useToken();
 
     useEffect(() => {
-        axios.defaults.headers.common['Content-Type'] = 'application/json';
-        axios.defaults.headers.common['Authorization'] = token
-            ? `Bearer ${token}`
-            : null;
+        if (!token) return;
         getTodos();
     }, [token]);
 
-    const getTodos = useCallback(() => {
+    const getTodos = useCallback(async () => {
         if (!token) return;
 
-        fetchGetTodos().then(setTodos);
+        await fetchGetTodos(token).then(setTodos);
     }, [token]);
 
     const createTodo = useCallback(
         async (todo: string) => {
             if (!token) return;
-            const data = await fetchCreateTodo(todo);
+            const data = await fetchCreateTodo(token, todo);
             getTodos();
 
             return data;
@@ -48,7 +44,7 @@ export default function TodoContextProvider({
         async (todoId: number) => {
             if (!token) return;
 
-            const data = await fetchDeleteTodo(todoId);
+            const data = await fetchDeleteTodo(token, todoId);
             getTodos();
 
             return data;
@@ -60,7 +56,7 @@ export default function TodoContextProvider({
         async (todo: Todo) => {
             if (!token) return;
 
-            const data = await fetchUpdateTodo(todo);
+            const data = await fetchUpdateTodo(token, todo);
             getTodos();
 
             return data;

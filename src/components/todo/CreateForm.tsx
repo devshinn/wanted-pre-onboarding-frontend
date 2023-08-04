@@ -4,11 +4,12 @@ import { FormEvent, useCallback, useContext, useState } from 'react';
 type Props = {};
 
 const TodoAddForm = (props: Props) => {
-    const { createTodo, todos } = useContext(TodoContext);
+    const { createTodo } = useContext(TodoContext);
     const [newTodo, setNewTodo] = useState('');
     const onChange = useCallback(
         (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
+            if (!newTodo.replaceAll(' ', '')) return; //''or공백만 추가하는 경우
             createTodo(newTodo);
             setNewTodo('');
         },

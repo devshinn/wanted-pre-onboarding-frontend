@@ -15,11 +15,6 @@ const Auth = ({ option }: Props) => {
 
     const navigate = useNavigate();
     useEffect(() => {
-        axios.defaults.headers.common['Content-Type'] = 'application/json';
-        axios.defaults.headers.common['Authorization'] = token
-            ? `Bearer ${token}`
-            : null;
-
         if (option === true && !token) {
             return navigate('/signin', { replace: true });
         } else if (option === false && token) {

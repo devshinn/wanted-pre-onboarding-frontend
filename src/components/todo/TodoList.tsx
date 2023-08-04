@@ -8,7 +8,7 @@ const TodoList = () => {
     return (
         <ul className='mt-5'>
             {todos
-                .sort((a, b) => b.id - a.id) //최신순 정렬
+                ?.sort((a, b) => b.id - a.id) //최신순 정렬
                 ?.map((todo) => (
                     <TodoItem key={todo.id} todo={todo} />
                 ))}

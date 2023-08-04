@@ -6,11 +6,10 @@ import TodoContextProvider from 'context/TodoContextProvider';
 type Props = {};
 
 const TodoPage = (props: Props) => {
-    // console.log(todos);
     return (
         <Layout>
             <div>
-                <h1 className='text-lg font-bold'>할일 목록</h1>
+                <h1 className='text-lg font-bold'>My Todo</h1>
             </div>
             <TodoContextProvider>
                 <TodoAddForm />
