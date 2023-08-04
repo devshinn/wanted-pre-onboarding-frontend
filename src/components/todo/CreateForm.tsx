@@ -21,10 +21,12 @@ const TodoAddForm = (props: Props) => {
                 placeholder='할일을 추가해보세요~'
                 onChange={(e) => setNewTodo(e.target.value)}
                 value={newTodo}
+                data-testid='new-todo-input'
             />
             <button
                 className='flex-no-shrink p-2  text-primary font-bold border-2 rounded text-teal border-primary hover:text-white hover:bg-primary whitespace-nowrap'
                 type='submit'
+                data-testid='new-todo-add-button'
             >
                 추가
             </button>

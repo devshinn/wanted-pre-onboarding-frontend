@@ -35,6 +35,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
                             className='whitespace-nowrap text-primary   px-2 py-1 rounded-lg'
                             type='button'
                             onClick={() => setEditOn(true)}
+                            data-testid='modify-button'
                         >
                             수정
                         </button>
@@ -42,6 +43,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
                             className='whitespace-nowrap text-red-500   px-2 py-1 rounded-lg'
                             type='button'
                             onClick={() => deleteTodo(todo.id)}
+                            data-testid='delete-button'
                         >
                             삭제
                         </button>

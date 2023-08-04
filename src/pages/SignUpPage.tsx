@@ -72,6 +72,7 @@ const SignUpPage = () => {
                                     placeholder='E-Mail'
                                     onChange={onChangeInput}
                                     onFocus={() => setFocus(true)}
+                                    data-testid='email-input'
                                 />
                             </div>
                             <div className='mb-6'>
@@ -90,6 +91,7 @@ const SignUpPage = () => {
                                     placeholder='**************'
                                     onChange={onChangeInput}
                                     onFocus={() => setFocus(true)}
+                                    data-testid='password-input'
                                 />
                             </div>
                             <div className='flex'>
@@ -100,6 +102,7 @@ const SignUpPage = () => {
                                         'bg-primary hover:bg-primary-dark w-full p-4 text-sm text-white uppercase font-bold tracking-wider',
                                         !submitOk && ' bg-gray-400'
                                     )}
+                                    data-testid='signup-button'
                                 >
                                     회원가입
                                 </button>

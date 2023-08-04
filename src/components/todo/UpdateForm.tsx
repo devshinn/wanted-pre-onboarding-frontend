@@ -19,16 +19,19 @@ const UpdateForm = ({ todo, setTodo, setEditOn }: Props) => {
                 className='w-full focus:outline-none border-b-2 border-primary'
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
+                data-testid='modify-input'
             />
             <button
                 className=' whitespace-nowrap px-1 text-primary'
                 onClick={onClickBtn}
+                data-testid='submit-button'
             >
                 제출
             </button>
             <button
                 className=' whitespace-nowrap px-1 text-red-500'
                 onClick={onClickBtn}
+                data-testid='cancel-button'
             >
                 취소
             </button>

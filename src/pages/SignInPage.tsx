@@ -68,6 +68,7 @@ const SignInPage = () => {
                                     placeholder='E-Mail'
                                     onChange={onChangeInput}
                                     onFocus={() => setFocus(true)}
+                                    data-testid='email-input'
                                 />
                             </div>
                             <div className='mb-6'>
@@ -86,6 +87,7 @@ const SignInPage = () => {
                                     placeholder='**************'
                                     onChange={onChangeInput}
                                     onFocus={() => setFocus(true)}
+                                    data-testid='password-input'
                                 />
                             </div>
                             <div className='flex'>
@@ -96,6 +98,7 @@ const SignInPage = () => {
                                         'bg-primary hover:bg-primary-dark w-full p-4 text-sm text-white uppercase font-bold tracking-wider',
                                         !submitOk && ' bg-gray-400'
                                     )}
+                                    data-testid='signin-button'
                                 >
                                     로그인
                                 </button>
