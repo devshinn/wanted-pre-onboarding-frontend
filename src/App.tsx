@@ -1,4 +1,5 @@
 import Auth from 'auth/Auth';
+import NotFound from 'pages/NotFound';
 import SignInPage from 'pages/SignInPage';
 import SignUpPage from 'pages/SignUpPage';
 import TodoPage from 'pages/TodoPage';
@@ -17,6 +18,7 @@ function App() {
                     <Route path='/signin' element={<SignInPage />} />
                     <Route path='/signup' element={<SignUpPage />} />
                 </Route>
+                <Route path='*' element={<NotFound />}></Route>
             </Routes>
         </BrowserRouter>
     );
