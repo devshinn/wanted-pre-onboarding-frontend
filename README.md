@@ -8,8 +8,6 @@
 
 ## 로컬 서버 실행
 
-서버 프로젝트를 클론 받아 아래 명령어를 이용해 서버를 실행 합니다.
-
 > ```bash
 > git clone https://github.com/devshinn/wanted-pre-onboarding-frontend.git
 > npm install
