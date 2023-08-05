@@ -14,7 +14,7 @@
 > npm start
 > ```
 
-> # 배포링크
+## 배포링크
 >
 > [여기](https://wanted-pre-onboarding-frontend-three-delta.vercel.app/)서 확인 및 테스트 할수 있습니다.
 
