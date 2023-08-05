@@ -6,7 +6,7 @@
 | ----- | ------------------- |
 | Email | kor.sshin@gmail.com |
 
-## 로컬 서버 실행
+## 로컬실행
 
 > ```bash
 > git clone https://github.com/devshinn/wanted-pre-onboarding-frontend.git
