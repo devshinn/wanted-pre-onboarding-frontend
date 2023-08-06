@@ -28,9 +28,13 @@ const SignInPage = () => {
             e.preventDefault();
             fetchSignin(loginData)
                 .then((res) => {
-                    console.log('first');
-                    setToken(res.access_token);
-                    navigate('/todo', { replace: true });
+                    if (res.access_token) {
+                        alert(
+                            '로그인이 완료되었습니다. Todo페이지로 이동합니다.'
+                        );
+                        setToken(res.access_token);
+                        navigate('/todo', { replace: true });
+                    }
                 })
                 .catch(errorHandler);
         },
