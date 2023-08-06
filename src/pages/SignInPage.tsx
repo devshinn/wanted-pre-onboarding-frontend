@@ -65,7 +65,7 @@ const SignInPage = () => {
                             )}
                             name='email'
                             type='text'
-                            placeholder='E-Mail'
+                            placeholder='이메일'
                             onChange={onChangeInput}
                             onFocus={() => setFocus(true)}
                             data-testid='email-input'
@@ -82,7 +82,7 @@ const SignInPage = () => {
                             )}
                             name='password'
                             type='password'
-                            placeholder='**************'
+                            placeholder='비밀번호'
                             onChange={onChangeInput}
                             onFocus={() => setFocus(true)}
                             data-testid='password-input'

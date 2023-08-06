@@ -21,9 +21,9 @@ export const validate = (value: string, type: 'email' | 'password') => {
     }
     if (type === 'password') {
         if (value.length === 0) {
-            result.message = '패스워드를 입력해주세요.';
+            result.message = '비밀번호를 입력해주세요.';
         } else if (value.length < 8) {
-            result.message = '패스워드는 8자 이상이여야 합니다.';
+            result.message = '비밀번호는 8자 이상이여야 합니다.';
         } else {
             result.isOk = true;
             result.message = '';
